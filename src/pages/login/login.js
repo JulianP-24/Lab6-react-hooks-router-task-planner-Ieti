@@ -7,6 +7,7 @@ import FormControl from "@material-ui/core/FormControl";
 import UserIcon from "@mui/icons-material/Person";
 import PasswordIcon from "@mui/icons-material/Password";
 import ListItemIcon from "@mui/material/ListItemIcon";
+import authenticationService from "../../services/authenticationService";
 
 function Login() {
   const paperStyle = {
@@ -27,11 +28,18 @@ function Login() {
     setPassword(evt.target.value);
   }
 
-  function handleLogin(evt) {}
+    function handleLogin(evt) {
+        evt.preventDefault();
+        authenticationService.login(email, password).then(
+            () => {
+                window.location = "/tasks";
+                alert("Inicio exitoso");
+            }
+        )
+  }
 
   return (
     <Grid>
-      <div>holaaaaa{email}</div>
       <form onSubmit={handleLogin} className="">
         <Paper elevation={10} style={paperStyle} className="card">
           <Grid align="center">
