@@ -28,14 +28,12 @@ function Login() {
     setPassword(evt.target.value);
   }
 
-    function handleLogin(evt) {
-        evt.preventDefault();
-        authenticationService.login(email, password).then(
-            () => {
-                window.location = "/tasks";
-                alert("Inicio exitoso");
-            }
-        )
+  function handleLogin(evt) {
+    evt.preventDefault();
+    authenticationService.login(email, password).then(() => {
+      window.location = "/tasks";
+      alert("Inicio exitoso");
+    });
   }
 
   return (
