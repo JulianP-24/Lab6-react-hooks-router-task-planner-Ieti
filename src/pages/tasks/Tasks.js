@@ -5,11 +5,11 @@ function Tasks() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    tasksService.getTasks().then((response) => response.json())
-      .then(json => {
-        console.log(json)
-        setTasks(json);
+    tasksService.getTasks().then((response) => {
+      console.log(response)
+        setTasks(response);
     })
+        
   }, []);
 
   function listProducts() {
@@ -31,6 +31,7 @@ function Tasks() {
 
   return (
     <div>
+      <h1>Tasks: </h1>
       <div>
         <div>
           <table>

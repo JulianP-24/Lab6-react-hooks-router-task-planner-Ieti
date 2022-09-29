@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+window.$token = "";
+window.$expiration = "";
 ReactDOM.render(
   <React.StrictMode>
     <App />
