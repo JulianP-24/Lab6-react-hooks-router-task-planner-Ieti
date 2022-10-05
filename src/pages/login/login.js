@@ -31,10 +31,11 @@ function Login() {
   function handleLogin(evt) {
     evt.preventDefault();
     authenticationService.login(email, password).then(() => {
+      console.log(window.$token);
       window.location = "/tasks";
       alert("Inicio exitoso");
-    });
-  }
+  });
+}
 
   return (
     <Grid>

@@ -14,6 +14,7 @@ function Tasks() {
 
   function listProducts() {
     if (tasks) {
+      console.log(tasks);
       return tasks.map((task) => {
         return (
           <tr key={task.id}>
@@ -41,8 +42,8 @@ function Tasks() {
                 <th>Descripcion</th>
                 <th>Estado</th>
                 <th>Asignado</th>
-                <th>Fecha Terminacion</th>
-                <th>Fecha Creacion</th>
+                <th>Fecha_Terminacion</th>
+                <th>Fecha_Creacion</th>
               </tr>
             </thead>
             <tbody>{listProducts()}</tbody>
